@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TriangleTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2015-05-20T19:49:39" hostname="Jakes-iMac.local" time="0.002">
+  <properties/>
+  <testcase name="testTriangleType_twoSidesEqual_isosceles" classname="TriangleTest" time="0.001"/>
+  <testcase name="testTriangleConstructor_instantiatesWithType" classname="TriangleTest" time="0.0"/>
+  <testcase name="testTriangleType_illegalSides_notATriangle" classname="TriangleTest" time="0.0"/>
+  <testcase name="testTriangleType_noSidesEqual_scalene" classname="TriangleTest" time="0.0"/>
+  <testcase name="testTriangleType_allSidesEqual_equilateral" classname="TriangleTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
