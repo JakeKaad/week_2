@@ -12,7 +12,6 @@ public class App {
 
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-
       model.put("template", "templates/index.vtl");
       model.put("todos", request.session().attribute("todos"));
       return new ModelAndView(model, layout);
@@ -20,6 +19,7 @@ public class App {
 
     post("/todos", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+
       ArrayList<Todo> todos;
       if (request.session().attribute("todos") instanceof ArrayList) {
         todos = request.session().attribute("todos");
@@ -37,3 +37,6 @@ public class App {
     });
   }
 }
+
+
+ArrayList<Rectangle> todos = new ArrayList<Rectangle>();
