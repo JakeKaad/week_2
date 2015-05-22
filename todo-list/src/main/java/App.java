@@ -20,23 +20,25 @@ public class App {
     post("/todos", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
+      // we are either using the existing array list or creating a new one
+      // if it doesn't already exist.
       ArrayList<Todo> todos;
       if (request.session().attribute("todos") instanceof ArrayList) {
         todos = request.session().attribute("todos");
       } else {
         todos = new ArrayList<Todo>();
+        request.session().attribute("todos", todos);
       }
 
+      // Makes a new todo using description from user
       String description = request.queryParams("description");
       Todo newTodo = new Todo(description);
-      todos.add(newTodo);
 
-      request.session().attribute("todos", todos);
+      // adds new todo to todos arraylist and then puts it back into session
+      todos.add(newTodo);
+      // return null necessary because lambdas expect a return statement.
       response.redirect("/");
       return null;
     });
   }
 }
-
-
-ArrayList<Rectangle> todos = new ArrayList<Rectangle>();

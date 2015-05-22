@@ -11,27 +11,18 @@ public class App {
 
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("username", request.session().attribute("username"));
 
-
-      model.put("template", "templates/what-is-your-name.vtl");
+      model.put("template", "templates/welcome.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/username", (request, response) -> {
+    post("/welcome", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      String username = request.queryParams("name");
-
-      request.session().attribute("username", username);
-      response.redirect("/welcome");
-      return null;
-    });
-
-    get("/welcome", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-
-      String username = request.session().attribute("username");
-      model.put("username", username);
+      String inputtedUsername = request.queryParams("username");
+      request.session().attribute("username", inputtedUsername);
+      model.put("username", inputtedUsername);
 
       model.put("template", "templates/welcome.vtl");
       return new ModelAndView(model, layout);

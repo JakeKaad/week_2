@@ -1,0 +1,13 @@
+#if ($username)
+  Welcome $username
+#else
+  <form action="/welcome" method="post">
+    <label for="username">Your name</label>
+    <input id="username" name="username" type="text">
+
+    <button type="submit">Submit name</button>
+  </form>
+#end
+
+
+<a href="/">Return to home page</a>

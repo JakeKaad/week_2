@@ -1,6 +1,6 @@
 public class Todo {
   private String mDescription;
-  private Boolean mFinished;
+  private boolean mFinished;
 
   public Todo(String description) {
     mDescription = description;
@@ -11,7 +11,8 @@ public class Todo {
     return mDescription;
   }
 
-  public Boolean isFinished() {
+
+  public boolean isFinished() {
     return mFinished;
   }
 }

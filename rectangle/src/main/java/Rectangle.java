@@ -1,28 +1,22 @@
 
 public class Rectangle {
-  private Integer mLength;
-  private Integer mWidth;
+  private int mLength;
+  private int mWidth;
 
-  public Rectangle() {}
-
-  public Rectangle(Integer length, Integer width) {
+  public Rectangle(int length, int width) {
     mLength = length;
     mWidth = width;
   }
 
-  public static Boolean isSquare(Integer length, Integer width) {
-    return length == width;
-  }
-
-  public Boolean isSquare() {
-    return mLength == mWidth;
-  }
-
-  public Integer getLength() {
+  public int getLength() {
     return mLength;
   }
 
-  public Integer getWidth() {
+  public int getWidth() {
     return mWidth;
+  }
+
+  public boolean isSquare() {
+    return mLength == mWidth;
   }
 }

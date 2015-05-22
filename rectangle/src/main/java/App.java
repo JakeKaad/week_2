@@ -24,8 +24,8 @@ public class App {
 
     get("/rectangle", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      Integer length = Integer.parseInt(request.queryParams("length"));
-      Integer width = Integer.parseInt(request.queryParams("width"));
+      int length = Integer.parseInt(request.queryParams("length"));
+      int width = Integer.parseInt(request.queryParams("width"));
 
       Rectangle myRectangle = new Rectangle(length, width);
       model.put("myRectangle", myRectangle);
