@@ -1,5 +1,5 @@
 public class Car {
-  private static int currentId = 0;
+  public static int instances = 0;
 
   private String mMake;
   private int mYear;
@@ -30,8 +30,8 @@ public class Car {
   }
 
   private int newId() {
-    Integer id = new Integer(currentId);
-    currentId++;
+    instances++;
+    Integer id = new Integer(instances);
     return id.intValue();
   }
 }

@@ -30,13 +30,13 @@ public class CarTest {
   @Test
   public void newID_carsInstantiatiesWithId_true() {
     Car newCar = new Car("Toyota", 2004, "Red");
-    assertEquals(1, newCar.getId());
+    assertEquals(Car.instances, newCar.getId() );
   }
 
   @Test
-  public void newID_idsIncrementOnEachNewCar_2() {
+  public void newID_idsIncrementOnEachNewCar_1() {
     Car firstCar = new Car("Toyota", 2004, "Red");
     Car secondCar = new Car("Toyota", 2004, "Red");
-    assertEquals(2, secondCar.getId());
+    assertEquals(1, secondCar.getId() - firstCar.getId());
   }
 }
