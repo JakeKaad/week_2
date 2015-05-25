@@ -26,4 +26,17 @@ public class CarTest {
     Car newCar = new Car("Toyota", 2004, "Red");
     assertEquals("Red", newCar.getColor());
   }
+
+  @Test
+  public void newID_carsInstantiatiesWithId_true() {
+    Car newCar = new Car("Toyota", 2004, "Red");
+    assertEquals(1, newCar.getId());
+  }
+
+  @Test
+  public void newID_idsIncrementOnEachNewCar_2() {
+    Car firstCar = new Car("Toyota", 2004, "Red");
+    Car secondCar = new Car("Toyota", 2004, "Red");
+    assertEquals(2, secondCar.getId());
+  }
 }

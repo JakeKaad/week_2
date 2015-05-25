@@ -1,0 +1,15 @@
+#if ($dealership)
+  <h1>Cars available</h1>
+  #each ($car in $dealership.getCars())
+    <li> $car.getYear() $car.getColor() $car.getMake() </li>
+  #end
+  <a href="/new-car">Add a new car</a>
+#else
+  <form action="/new-dealership" method="post">
+
+    <label for="dealershipName">Dealership name</label>
+    <input id="dealershipName" name="dealershipName" type="text">
+
+    <button type="submit" class="btn btn-info>Register Dealership</button>
+  </form>
+#end
