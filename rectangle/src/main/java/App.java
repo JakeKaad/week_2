@@ -10,11 +10,6 @@ public class App {
     String layout = "templates/layout.vtl";
 
     get("/", (request, response) -> {
-      response.redirect("/home");
-      return null;
-    });
-
-    get("/home", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
 
@@ -29,6 +24,11 @@ public class App {
 
       Rectangle myRectangle = new Rectangle(length, width);
       model.put("myRectangle", myRectangle);
+
+      if (myRectangle.isSquare()) {
+        Cube myCube = new Cube(myRectangle);
+        model.put("myCube", myCube);
+      }
 
       model.put("template", "templates/rectangle.vtl");
       return new ModelAndView(model, layout);
