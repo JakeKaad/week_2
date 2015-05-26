@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+
 public class Car {
-  public static int instances = 0;
+  private static ArrayList<Car> instances = new ArrayList<Car>();
 
   private String mMake;
   private int mYear;
@@ -10,7 +12,8 @@ public class Car {
     mMake = make;
     mYear = year;
     mColor = color;
-    mId = newId();
+    instances.add(this);
+    mId = instances.size() + 1;
   }
 
   public String getMake() {
@@ -29,9 +32,17 @@ public class Car {
     return mId;
   }
 
-  private int newId() {
-    instances++;
-    Integer id = new Integer(instances);
-    return id.intValue();
+  public  static ArrayList<Car> all() {
+    return instances;
+  }
+
+  public static Car find(int id) {
+    Car foundCar = null;
+    for (Car car : instances) {
+      if (car.getId() == id) {
+        foundCar = car;
+      }
+    }
+    return foundCar;
   }
 }

@@ -1,6 +1,8 @@
-<h1>New car added</h1>
+#if ($car)
+  <h1>$car.getYear() $car.getColor() $car.getMake()</h1>
+#else
+  <h1> Car not found </h1>
+#end
 
-<p>$car.getYear() $car.getColor() $car.getMake()</p>
-
-<a href="/new-car">Add another car</a>
-<a href="/">Dealership home</a>
+<h5><a href="/cars/new">Add another car</a></h5>
+<h5><a href="/cars">All cars</a></h5>

@@ -1,28 +1,29 @@
-import java.util.ArrayList;
-
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class DealershipTest {
+public class DealershpTest {
 
   @Test
-  public void dealership_instantiatesCorrectly_true() {
-    Dealership ronTonkin = new Dealership("Ron Tonkin");
-    assertEquals(true, ronTonkin instanceof Dealership);
+  public void getName_returnsName_true() {
+    Dealership testDealership = new Dealership("Bob's Used Cars");
+    assertEquals("Bob's Used Cars", testDealership.getName());
   }
 
   @Test
-  public void getName_dealershipHasAName_name() {
-    Dealership ronTonkin = new Dealership("Ron Tonkin");
-    assertEquals("Ron Tonkin", ronTonkin.getName());
+  public void getId_returnsDealershipId() {
+    Dealership testDealership = new Dealership("Bob's Used Cars");
+    assertTrue(Dealership.all().length == testDealership.getId());
   }
 
+  @Test
+  public void getCars_initiallyReturnsEmptyArrayList() {
+    Dealership testDealership = new Dealership("Bob's Used Cars");
+    assertTrue(testDealership.getCars() instanceof ArrayList);
+  }
 
   @Test
-  public void addCar_putsaNewCarInDealershipCarsArrayList_true() {
-    Dealership ronTonkin = new Dealership("Ron Tonkin");
-    Car newCar = new Car("Toyota", 2004, "Red");
-    ronTonkin.addCar(newCar);
-    assertEquals(false, ronTonkin.getCars().isEmpty());
+  public void find_returnsDealershipWithSameId() {
+    Dealership testDealership = new Dealership("Bob's Used Cars");
+    assertEquals(Dealership.find(testDealership.getId()), testDealership);
   }
 }

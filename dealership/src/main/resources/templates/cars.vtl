@@ -1,0 +1,5 @@
+<h1> All cars </h1>
+
+#foreach($car in $cars)
+ <h3><a href="/cars/$car.getId()">$car.getMake()</a></h3>
+#end

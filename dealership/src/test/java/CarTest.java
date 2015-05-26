@@ -28,15 +28,21 @@ public class CarTest {
   }
 
   @Test
-  public void newID_carsInstantiatiesWithId_true() {
-    Car newCar = new Car("Toyota", 2004, "Red");
-    assertEquals(Car.instances, newCar.getId() );
+  public void all_returnsAllInstancesOfCar_true() {
+    Car firstCar = new Car("Toyota", 2004, "Red");
+    Car secondCar = new Car("Toyota", 2004, "Red");
+    assertTrue(Car.all().indexOf(firstCar) > -1);
   }
 
   @Test
-  public void newID_idsIncrementOnEachNewCar_1() {
+  public void newID_carsInstantiatiesWithId_true() {
+    Car newCar = new Car("Toyota", 2004, "Red");
+    assertEquals(Car.all().size(), newCar.getId() );
+  }
+
+  @Test
+  public void find_returnsCarWithSameID_firstCar() {
     Car firstCar = new Car("Toyota", 2004, "Red");
-    Car secondCar = new Car("Toyota", 2004, "Red");
-    assertEquals(1, secondCar.getId() - firstCar.getId());
+    assertEquals(Car.find(firstCar.getId()), firstCar);
   }
 }
