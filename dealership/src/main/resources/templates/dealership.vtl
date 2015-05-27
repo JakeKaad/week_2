@@ -1,0 +1,8 @@
+<h3>Here are all the cars in this dealership:</h3>
+
+#foreach($car in $dealership.getCars())
+ <h3>$car.getColor() $car.getYear() $car.getMake()</a></h3>
+#end
+
+<a href="/dealerships/$dealership.getId()/cars/new">Add a new car</a>
+<a href="/">Return to Main Page</a>

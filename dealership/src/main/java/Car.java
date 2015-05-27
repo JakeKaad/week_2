@@ -13,7 +13,7 @@ public class Car {
     mYear = year;
     mColor = color;
     instances.add(this);
-    mId = instances.size() + 1;
+    mId = instances.size();
   }
 
   public String getMake() {

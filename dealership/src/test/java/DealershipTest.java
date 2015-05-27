@@ -1,7 +1,9 @@
+import java.util.ArrayList;
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
-public class DealershpTest {
+public class DealershipTest {
 
   @Test
   public void getName_returnsName_true() {
@@ -12,7 +14,7 @@ public class DealershpTest {
   @Test
   public void getId_returnsDealershipId() {
     Dealership testDealership = new Dealership("Bob's Used Cars");
-    assertTrue(Dealership.all().length == testDealership.getId());
+    assertTrue(Dealership.all().size() == testDealership.getId());
   }
 
   @Test
@@ -25,5 +27,13 @@ public class DealershpTest {
   public void find_returnsDealershipWithSameId() {
     Dealership testDealership = new Dealership("Bob's Used Cars");
     assertEquals(Dealership.find(testDealership.getId()), testDealership);
+  }
+
+  @Test
+  public void addCar_addsCarToList() {
+    Dealership testDealership = new Dealership("Bob's Used Cars");
+    Car testCar = new Car("Ford", 1983, "Rust");
+    testDealership.addCar(testCar);
+    assertTrue(testDealership.getCars().indexOf(testCar) > -1);
   }
 }
