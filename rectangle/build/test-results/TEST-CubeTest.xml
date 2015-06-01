@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CubeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-05-26T17:37:42" hostname="Jakes-iMac.local" time="0.001">
+<testsuite name="CubeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-06-01T23:09:24" hostname="Jakes-iMac.local" time="0.001">
   <properties/>
-  <testcase name="volume_determinesTheVolumeOfTheCube_27000" classname="CubeTest" time="0.001"/>
+  <testcase name="volume_determinesTheVolumeOfTheCube_27000" classname="CubeTest" time="0.0"/>
   <testcase name="surfaceArea_determinesTheSurfaceAreaOfACube_5400" classname="CubeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

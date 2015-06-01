@@ -14,7 +14,6 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
       model.put("todos", request.session().attribute("todos"));
-
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -22,10 +21,9 @@ public class App {
     post("/todos", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      ArrayList<Todo> todos;
-      if (request.session().attribute("todos") instanceof ArrayList) {
-        todos = request.session().attribute("todos");
-      } else {
+      ArrayList<Todo> todos = request.session().attribute("todos");
+
+      if (todos == null) {
         todos = new ArrayList<Todo>();
         request.session().attribute("todos", todos);
       }
@@ -35,9 +33,8 @@ public class App {
 
       todos.add(newTodo);
 
-      model.put("template", "templates/index.vtl");
-      response.redirect("/");
-      return null;
-    });
+      model.put("template", "templates/success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 }

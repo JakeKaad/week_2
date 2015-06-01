@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TodoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-05-22T17:29:34" hostname="Jakes-iMac.local" time="0.002">
+<testsuite name="TodoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2015-06-01T18:36:30" hostname="Jakes-iMac.local" time="0.001">
   <properties/>
   <testcase name="todo_instantiatesWithDescription_true" classname="TodoTest" time="0.001"/>
   <testcase name="todo_instantiatesCorrectly_true" classname="TodoTest" time="0.0"/>

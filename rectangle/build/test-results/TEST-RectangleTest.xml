@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RectangleTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-05-26T17:37:42" hostname="Jakes-iMac.local" time="0.001">
+<testsuite name="RectangleTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-06-01T23:09:24" hostname="Jakes-iMac.local" time="0.001">
   <properties/>
-  <testcase name="area_returnsTheAreaOfTheRectangle_450" classname="RectangleTest" time="0.001"/>
+  <testcase name="area_returnsTheAreaOfTheRectangle_450" classname="RectangleTest" time="0.0"/>
   <testcase name="isSquare_withEqualSides_true" classname="RectangleTest" time="0.0"/>
   <testcase name="newRectangle_instantiatesCorrectly" classname="RectangleTest" time="0.0"/>
   <testcase name="isSquare_widthAndHeightDifferent_false" classname="RectangleTest" time="0.0"/>
