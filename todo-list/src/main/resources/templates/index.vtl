@@ -1,16 +1,16 @@
 <h1>Todo list!</h1>
 
-<p>Add a new todo:</p>
+<p>Add a new task:</p>
 
-<form action="/todos" method="post">
+<form action="/tasks" method="post">
   <label for="description">Task Description</label>
   <input id="description" name="description" type="text">
 
-  <button type="submit">Add task</button>
+  <button type="submit" class="btn btn-default">Add task</button>
 </form>
 
 <ul>
-#foreach ($todo in $todos)
-  <li>$todo.getDescription()</li>
+#foreach ($task in $tasks)
+  <li>$task.getDescription()</li>
 #end
 </ul>

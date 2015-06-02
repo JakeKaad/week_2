@@ -13,25 +13,25 @@ public class App {
     get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      model.put("todos", request.session().attribute("todos"));
+      model.put("tasks", request.session().attribute("tasks"));
       model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/todos", (request, response) -> {
+    post("/tasks", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
 
-      ArrayList<Todo> todos = request.session().attribute("todos");
+      ArrayList<Task> tasks = request.session().attribute("tasks");
 
-      if (todos == null) {
-        todos = new ArrayList<Todo>();
-        request.session().attribute("todos", todos);
+      if (tasks == null) {
+        tasks = new ArrayList<Task>();
+        request.session().attribute("tasks", tasks);
       }
 
       String description = request.queryParams("description");
-      Todo newTodo = new Todo(description);
+      Task newTask = new Task(description);
 
-      todos.add(newTodo);
+      tasks.add(newTask);
 
       model.put("template", "templates/success.vtl");
       return new ModelAndView(model, layout);
