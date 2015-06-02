@@ -1,0 +1,5 @@
+#foreach ($task in $tasks)
+  <a href="/tasks/$task.getId()">$task.getDescription()</a>
+#end
+</ul>
+<a href="/tasks/new">Add New Task</a>
