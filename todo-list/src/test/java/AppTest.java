@@ -27,10 +27,10 @@ public class AppTest extends FluentTest {
   @Test
   public void taskIsCreatedTest() {
     goTo("http://localhost:4567/");
-    click("a", withText("Add a new task"));
-    fill("#description").with("Mow the lawn");
+    click("a", withText("Add a new category"));
+    fill("#description").with("Household chores");
     submit(".btn");
-    assertThat(pageSource()).contains("Your task has been saved.");
+    assertThat(pageSource()).contains("Your category has been saved.");
   }
 
   @Test
